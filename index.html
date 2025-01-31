@@ -32,8 +32,12 @@
             background: white;
             padding: 15px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
         }
         .project-card img {
             width: 100%;
@@ -41,15 +45,46 @@
             object-fit: cover;
             border-radius: 5px;
         }
+        .project-card h2 {
+            font-size: 20px;
+            color: #333;
+        }
+        .project-card p {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 10px;
+        }
         .project-card a {
             display: inline-block;
             margin-top: 10px;
             color: #007bff;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s ease;
         }
         .project-card a:hover {
             text-decoration: underline;
+            color: #0056b3;
+        }
+        .testimonials, .social-links {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .testimonials h3, .social-links h3 {
+            font-size: 24px;
+            color: #333;
+        }
+        .testimonials p, .social-links a {
+            font-size: 16px;
+            color: #555;
+        }
+        .social-links a {
+            margin: 0 10px;
+            font-size: 20px;
+            color: #007bff;
+        }
+        .social-links a:hover {
+            color: #0056b3;
         }
     </style>
 </head>
@@ -59,13 +94,28 @@
     </header>
     <main class="container">
         <div id="projets-container" class="grid"></div>
+
+        <!-- Section Témoignages -->
+        <div class="testimonials">
+            <h3>Témoignages</h3>
+            <p>"Un excellent professionnel qui a su gérer des projets complexes et innovants." - Client A</p>
+            <p>"Toujours à la pointe de la technologie et très réactif, un véritable atout pour notre équipe." - Collègue B</p>
+        </div>
+
+        <!-- Section Liens Sociaux -->
+        <div class="social-links">
+            <h3>Suivez-moi</h3>
+            <a href="https://www.linkedin.com/in/votreprofil" target="_blank">LinkedIn</a>
+            <a href="https://github.com/votreprofil" target="_blank">GitHub</a>
+        </div>
     </main>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const projects = [
-                { nom: "Projet 1", description: "Description du projet 1", image: "https://via.placeholder.com/300", url: "#" },
-                { nom: "Projet 2", description: "Description du projet 2", image: "https://via.placeholder.com/300", url: "#" },
-                { nom: "Projet 3", description: "Description du projet 3", image: "https://via.placeholder.com/300", url: "#" }
+                { nom: "Gestion de Serveurs de Jeu", description: "Configuration et gestion de serveurs pour des jeux multijoueurs.", image: "https://via.placeholder.com/300", url: "https://github.com/serveur-jeu", video: "https://www.youtube.com/embed/abc123" },
+                { nom: "Création de Scripts pour Jeux", description: "Développement de scripts pour l'automatisation des tâches dans les jeux.", image: "https://via.placeholder.com/300", url: "https://github.com/scripts-jeux", video: "https://www.youtube.com/embed/xyz789" },
+                { nom: "Création de Sites Web Statique", description: "Conception et développement de sites web statiques modernes.", image: "https://via.placeholder.com/300", url: "https://www.monsite.com", video: "https://www.youtube.com/embed/def456" }
             ];
             const container = document.getElementById('projets-container');
             projects.forEach(projet => {
@@ -75,7 +125,9 @@
                     <img src="${projet.image}" alt="${projet.nom}">
                     <h2>${projet.nom}</h2>
                     <p>${projet.description}</p>
-                    <a href="${projet.url}">Voir le projet</a>
+                    <a href="${projet.url}" target="_blank">Voir le projet</a>
+                    <br>
+                    <a href="${projet.video}" target="_blank">Voir la vidéo</a>
                 `;
                 container.appendChild(projetCard);
             });
