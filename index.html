@@ -113,10 +113,29 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const projects = [
-                { nom: "Gestion de Serveurs de Jeu", description: "Configuration et gestion de serveurs pour des jeux multijoueurs.", image: "https://github.com/denisngeu/project/blob/8e060f25cd053e14bc554fe627093cc3ba767a15/script/090222.png", url: "https://github.com/denisngeu/project/serveur/serveur.html", video: "https://www.youtube.com/watch?v=ID_DE_LA_VIDEO" },
-                { nom: "Création de Scripts pour Jeux", description: "Développement de scripts pour l'automatisation des tâches dans les jeux.", image: "https://github.com/denisngeu/project/blob/8e060f25cd053e14bc554fe627093cc3ba767a15/serveur/085545.png", url: "https://github.com/denisngeu/project/script/script.html", video: "https://www.youtube.com/watch?v=ID_DE_LA_VIDEO" },
-                { nom: "Création de Sites Web Statique", description: "Conception et développement de sites web statiques modernes.", image: "https://github.com/denisngeu/project/blob/8e060f25cd053e14bc554fe627093cc3ba767a15/web/090355.png", url: "https://github.com/denisngeu/project/web/web.html", video: "https://www.youtube.com/watch?v=ID_DE_LA_VIDEO" }
+                { 
+                    nom: "Gestion de Serveurs de Jeu", 
+                    description: "Configuration et gestion de serveurs pour des jeux multijoueurs.", 
+                    image: "https://raw.githubusercontent.com/denisngeu/project/main/script/090222.png", 
+                    url: "https://denisngeu.github.io/project/serveur/serveur.html", 
+                    video: "https://www.youtube.com/watch?v=ID_DE_LA_VIDEO" 
+                },
+                { 
+                    nom: "Création de Scripts pour Jeux", 
+                    description: "Développement de scripts pour l'automatisation des tâches dans les jeux.", 
+                    image: "https://raw.githubusercontent.com/denisngeu/project/main/serveur/085545.png", 
+                    url: "https://denisngeu.github.io/project/script/script.html", 
+                    video: "https://www.youtube.com/watch?v=ID_DE_LA_VIDEO" 
+                },
+                { 
+                    nom: "Création de Sites Web Statique", 
+                    description: "Conception et développement de sites web statiques modernes.", 
+                    image: "https://raw.githubusercontent.com/denisngeu/project/main/web/090355.png", 
+                    url: "https://denisngeu.github.io/project/web/web.html", 
+                    video: "https://www.youtube.com/watch?v=ID_DE_LA_VIDEO" 
+                }
             ];
+            
             const container = document.getElementById('projets-container');
             projects.forEach(projet => {
                 const projetCard = document.createElement('div');
